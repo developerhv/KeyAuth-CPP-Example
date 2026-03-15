@@ -2,6 +2,7 @@
 // It’s actually very simple to implement effective safeguards.
 // This won’t stop experienced attackers, but it helps prevent common threats like DLL patchers and auth swappers.
 
+// this version of keyauth 1.3 lib uses GPU For HWID Locking So You Can Replace With The Offical Libary If You Want From Here. https://github.com/KeyAuth/keyauth-cpp-library-1.3API
 
 #include <iostream>
 #include <Windows.h>
@@ -157,7 +158,7 @@ void print_user_data ( const api& app ) {
 }
 
 
-// this version of keyauth 1.3 lib uses GPU For HWID Locking So You Can Replace With The Offical Libary If You Want From Here. https://github.com/KeyAuth/keyauth-cpp-library-1.3API
+
 
 
 
