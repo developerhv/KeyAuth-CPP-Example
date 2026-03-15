@@ -128,6 +128,14 @@ std::string remaining_until ( const std::string& timestamp ) {
     return expiry_remaining ( timestamp );
 }
 
+
+std::tm timestamp_to_tm ( const std::string& timestamp ) {
+    const std::time_t raw = static_cast< std::time_t > ( std::strtoll ( timestamp.c_str ( ) , nullptr , 10 ) );
+    std::tm result {};
+    localtime_s ( &result , &raw );
+    return result;
+}
+
 void print_user_data ( const api& app ) {
     std::cout << encrypt ( "\n User data:" );
     std::cout << encrypt ( "\n Username: " ) << app.user_data.username;
@@ -148,12 +156,6 @@ void print_user_data ( const api& app ) {
     }
 }
 
-std::tm timestamp_to_tm ( const std::string& timestamp ) {
-    const std::time_t raw = static_cast< std::time_t > ( std::strtoll ( timestamp.c_str ( ) , nullptr , 10 ) );
-    std::tm result {};
-    localtime_s ( &result , &raw );
-    return result;
-}
 
 // this version of keyauth 1.3 lib uses GPU For HWID Locking So You Can Replace With The Offical Libary If You Want From Here. https://github.com/KeyAuth/keyauth-cpp-library-1.3API
 
